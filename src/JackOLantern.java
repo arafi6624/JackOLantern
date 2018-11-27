@@ -1,4 +1,4 @@
-public class JackOLantern extends Object{
+public class JackOLantern{
     private String [][] faceFeatures;
 
     public JackOLantern (String [][] faceFeatures){
@@ -9,16 +9,24 @@ public class JackOLantern extends Object{
         faceFeatures [row][column] = replace;
     }
 
-    @Override
-    public String toString() {
-        return super.toString();
-    }
-
     public void fill(String str){
-        for (i = 0; i < faceFeatures.length ; i++){
-            for (n = 0; n < faceFeatures[i].length; n++){
+        for (int i = 0; i < faceFeatures.length ; i++){
+            for (int n = 0; n < faceFeatures[i].length; n++){
                 faceFeatures [i][n] = str;
             }
         }
     }
+
+    @Override
+    public String toString() {
+        String output = "";
+        for (int i = 0; i < faceFeatures.length ; i++){
+            for (int n = 0; n < faceFeatures[i].length; n++){
+                output = output + faceFeatures [i][n];
+            }
+            output = output + "\n";
+        }
+        return output;
+    }
+
 }
